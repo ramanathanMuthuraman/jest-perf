@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion/react": "^11.10.0",
+    "@emotion/styled": "^11.10.0",
+    "@mui/material": "^5.10.2",
+    "@sanity/client": "^3.3.3",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
@@ -14,8 +18,10 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "test": "react-scripts --inspect-brk test --runInBand --no-cache",
+    "test:real": "npm run test -- src/AppWithMuiRootImport.test.js",
+    "test:mock": "npm run test -- src/AppWithMuiFactoryMocking.test.js"
   },
   "eslintConfig": {
     "extends": [
